@@ -13,12 +13,13 @@ __DATA__
 
 @@ index.html.ep
 % layout 'default';
-% title 'Welcome';
-%= form_for '/' => begin
+% # タイトルを変更
+% title '入力フォーム';
+% # 投稿先などを変更
+%= form_for '/post' => method => 'POST' => begin
   %= text_field 'body'
   %= submit_button '投稿する'
 % end
-<p><%= $entry %></p>
 
 @@ post.html.ep
 % # 新しいテンプレートを用意する
