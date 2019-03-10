@@ -3,9 +3,14 @@ use Mojolicious::Lite;
 
 get '/' => sub {
   my $c = shift;
+  $c->render(template => 'index');
+};
+
+post '/post' => sub {
+  my $c = shift;
   my $entry = $c->param('body');
   $c->stash(entry => $entry);
-  $c->render(template => 'index');
+  $c->render('post');
 };
 
 app->start;
