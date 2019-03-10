@@ -3,6 +3,7 @@ use Mojolicious::Lite;
 
 get '/' => sub {
   my $c = shift;
+  my $entry = $c->param('body');
   $c->render(template => 'index');
 };
 
