@@ -16,6 +16,7 @@ __DATA__
   %= text_field 'body'
   %= submit_button '投稿する'
 % end
+<p><%= $entry %></p>
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
