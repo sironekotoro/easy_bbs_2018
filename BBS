@@ -1,14 +1,18 @@
 #!/usr/bin/env perl
 use Mojolicious::Lite;
 
+my @entries = ();
+
 get '/' => sub {
   my $c = shift;
-  $c->render(template => 'index');
+  $c->stash(entries => \@entries); 
+  $c->render('index');
 };
 
 post '/post' => sub {
   my $c = shift;
   my $entry = $c->param('body');
+  push @entries, $entry;
   $c->stash(entry => $entry);
   $c->render('post');
 };
