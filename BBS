@@ -4,6 +4,7 @@ use Mojolicious::Lite;
 get '/' => sub {
   my $c = shift;
   my $entry = $c->param('body');
+  $c->stash(entry => $entry);
   $c->render(template => 'index');
 };
 
