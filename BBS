@@ -13,8 +13,7 @@ post '/post' => sub {
   my $c = shift;
   my $entry = $c->param('body');
   push @entries, $entry;
-  $c->stash(entry => $entry);
-  $c->render('post');
+  $c->redirect_to('/');
 };
 
 app->start;
